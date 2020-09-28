@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<style>
+	body{
+		margin:0px;
+		background-image:url(menuImg/noise.png);
+	}
+	#content{
+		background-image:url(menuImg/bg1.jpg); /* 백그라운드 이미지는 자동반복이니까 반복 취소해야함*/
+		background-repeat:no-repeat;
+		width:1000px;
+		height:1200px;
+		margin:0 auto;
+		
+	}
+	section>img{
+		width:100%;
+	}
+	#menu{
+	margin:0px 120px;
+	height:149px;
+	padding:0px;
+	list-style-type:none;
+	}
+	
+	
+	#menu a:link, #menu a:visited, #menu a:hover{
+		text-decoration:none;
+		color:#808;
+		font-size:2em;
+		font-weight:bold;
+	}	
+		
+</style>
+<script>
+	$(function(){
+		var menu = ['MENU', 'ABOUT', 'WORK', 'CONTACT'];
+		var menuTag = '';
+		menu.map(function(v, i){
+			menuTag += "<li><a href=''>"+v+"</a></li>";
+			
+		});
+		$("#menu").html(menuTag); //prepend(), append(), html();
+		$("#menu>li").css({
+			width:"25%",
+			lineHeight:"149px",
+			textAlign:"center",
+			float:"left",
+			backgroundImage:"url(menuImg/label.png)",
+			backgroundRepeat:"no-repeat",
+			backgroundPosition : "center -149px",
+			//transitionDuration:"1s" //1초동안 움직여라.<-- 기억하기. 여기넣으니 처음 나올때부터 움직여서 깔끔하지않음. 펑션에 넣는다.
+			
+		});
+		
+		//리본 show hover,  mouseover, mouseout, mouseenter, mouseleave
+		/*
+		$("#menu>li").on({
+			mouseenter:function(){
+				$(this).css("background-position","center 0px").css("transition-duration","1s");
+			},mouseleave:function(){
+				$(this).css("background-position","center -149px").css("transition-duration","1s");
+			}
+		});
+		*/ //같은 결과
+		$("#menu>li").hover(function(){
+			$(this).css("background-position","center 0px").css("transition-duration","1s");
+		},function(){
+			$(this).css("background-position","center -149px").css("transition-duration","1s");
+		});
+	});
+</script>
+</head>
+<body>
+<div id="content">
+	<ul id="menu"></ul>
+	<section>
+		<img src='../img/2.png'/>
+	</section>
+</div>
+</body>
+</html>

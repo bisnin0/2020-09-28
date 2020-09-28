@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	div{
+		height:50px;
+		line-height:50px;
+		font-size:20px;
+	}
+	#ta{
+		height:100px;
+		width:50%;
+	}
+
+</style>
+<script>
+	var keyNum = 100;
+	$(function(){
+		$("div").html("남은 문자 수 :"+ keyNum)	
+		$("#ta").on("keypress",function(){
+			if(keyNum>=1){
+				keyNum--;
+				$("div").html("남은 문자 수 :"+ keyNum)	
+			}else{
+				$("#ta").prop("readonly",true);
+
+			}
+			
+		});
+		
+	});
+</script> 
+</head>
+<body>
+<div></div>
+<textarea id="ta"></textarea>
+</body>
+</html>
+
+
+

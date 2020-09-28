@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	input[type=button]{
+		width:200px;
+		height:40px;
+		margin:5px;
+		float:left;
+	}
+	div{
+		clear:left;
+		width:100%;
+		height:700px;
+		border:1px solid gray;
+		overflow:hidden;
+	}
+	
+</style>
+<script>
+	$(function(){
+		var fontsize = 20;
+		$("div").css("font-size",fontsize+"px");
+		$("#minus").on("click", function(){
+			fontsize--;
+			$("div").css("font-size",fontsize+"px");
+		});
+		$("#reset").on("click", function(){
+			fontsize = 20;
+			$("div").css("font-size",fontsize+"px");
+		});
+		$("#plus").on("click", function(){
+			fontsize++;
+			$("div").css("font-size",fontsize+"px");
+		});
+	});
+</script> 
+</head>
+<body>
+<input type="button" id="minus" value="-"/>
+<input type="button" id="reset" value="O"/>
+<input type="button" id="plus" value="+"/>
+<div>
+<br/>
+A씨는 코로나19로 가뜩이나 올해 매출이 반토막이 난 상황에서 갑작스럽게 목돈이 들어가는 게 걱정스러웠다. 수 차례 구청에 문의했지만 돌아오는 답은 똑같았다. "당신이 팔고 있는 고기가 흑돼지라는 걸 증명할 수 있는 증빙서류를 내지 않으면 간판과 가게 내부 모든 문구를 다 바꿔야 한다.<br/>"
+논란의 시작은 작년 여름으로 거슬러 올라간다. 식품의약품안전처는 지난해 6월 "이베리코는 100% 흑돼지가 아니므로, 흑돼지라고 간판이나 메뉴에 표기할 경우 과장광고 혐의로 7월부터 영업정지 조치를 할 수 있다"는 안내문을 보냈다.<br/> 업계는 혼란에 빠졌다. 스페인 정부의 규정에는 '이베리코는 강렬한 검정과 검정 계열의 다양한 체색(體色)을 나타낸다'고만 돼 있기 때문이다. '100% 흑돼지'라는 문구는 어디에도 없다.<br/>
+식약처의 황당한 규제로 당시 스페인 대사관까지 나서서 조정을 해보려 했지만 국내 기준에 맞추려면 스페인의 축산관련법을 고쳐야 했다. 식약처는 단속을 강행하지 않고 해당 구청 위생과에 민원이 들어오면 건별로 검토하는 것으로 슬그머니 입장을 바꿨다.<br/> 올 들어 코로나19로 어려워진 자영업자들은 장사가 잘 되는 경쟁 업체들을 고발하는 도구로 최근 이 같은 규제를 악용하기 시작했다.<br/>
+문제는 국내에도 흑돼지를 흑돼지라고 부를 수 있는 판별법이나 법이 존재하지 않는다는 점이다. 100% 흑돼지다 아니다란 유전적 판별법은 없다. 털의 색깔을 통해 '백색돼지'와 '유색돼지'를 나눌 뿐이다.<br/> 흑돼지로 알려진 버크셔 품종도 교잡에 의해 흰 점이나 검붉은색을 띨 수 있기 때문에 돼지의 색깔로는 고기 등급을 매기지 않는다.
+
+</div>
+</body>
+</html>

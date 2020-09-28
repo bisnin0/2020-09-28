@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	body, ul, li{
+		margin:0px;
+		padding:0px;
+	}
+	#content{
+		width:1000px;
+		margin:0 auto;
+		padding:0
+	}
+	#title{
+		font-size:5em;
+		width:1000px;
+		text-align:center;
+		line-height:250px;
+		height:250px
+	}
+	a:link,  a:visited, a:hover{
+		text-decoration:none;
+		color:#000;
+	}
+</style> 
+<script>
+	$(function(){
+		
+		var menu = ['OUTER', 'TOP', 'DRESS', 'BOTTOM', 'SUMMER'];
+		var menuTag ="";
+		$("#content>div").eq(1).css({
+			width:"1000px",
+			height:"100px",
+			borderTop:'2px solid #000',
+			borderBottom:'2px solid #000'
+		});
+		menu.map(function(v,i){
+			menuTag+="<li><a href=''>"+v+"</a></li>";
+		});
+		$("#menu").html(menuTag);
+		$("#menu>li").css({
+			fontSize:"25px",
+			width:"20%",
+			lineHeight:"100px",
+			textAlign:"center",
+			float:"left",
+			listStyleType:"none"
+
+		});
+		var divTag =""
+		for(i=1; i<=5; i++){
+			divTag += "<div class=c1></div>";
+		}
+		$("#popup").prepend(divTag);
+		$("#popup").css({
+			width:'100%',
+			height:'1200px',
+			backgroundColor:'yellow',
+			backgroundImage:"url(../img/3.png)",
+			backgroundRepeat:"no-repeat",
+			backgroundSize:'cover'
+
+		
+		});
+		$("#popup>div").css({
+			width:'188px',
+			border:'1px solid gray',
+			zIndex:'10',
+			float:'left',
+			position:'relative',
+			left:'0px',
+			top:'-2px',
+			display:'none',
+			backgroundColor:'white',
+			fontSize:'25px',
+			textAlign:'center',
+			padding:'5px',
+			
+			
+		});
+		var c11 = ['가디건', '자켓&점퍼', '베스트', '코트', '세일'];
+		var c1Tag ="";
+		c11.map(function(v,i){
+			c1Tag+= "<a href=''>"+v+"</a><br/>";
+		});
+		$(".c1:eq(0)").html(c1Tag);
+		var c22 = ['Tee', 'Cami', 'Knit', 'Shirt&Blouse'];
+		var c2Tag ="";
+		c22.map(function(v,i){
+			c2Tag+= "<a href=''>"+v+"</a><br/>";
+		});
+		$(".c1:eq(1)").html(c2Tag);
+		var c33 = ['All', '바캉스룩', 'SET'];
+		var c3Tag ="";
+		c33.map(function(v,i){
+			c3Tag+= "<a href=''>"+v+"</a><br/>";
+		});
+		$(".c1:eq(2)").html(c3Tag);
+		var c44 = ['힐링투엘브', '히든밴딩시리즈', '스커트', '팬츠'];
+		var c4Tag ="";
+		c44.map(function(v,i){
+			c4Tag+= "<a href=''>"+v+"</a><br/>";
+		});
+		$(".c1:eq(3)").html(c4Tag);
+		var c55 = ['HOLI스웸웨어', 'at 22ºC', '바캉스룩'];
+		var c5Tag ="";
+		c55.map(function(v,i){
+			c5Tag+= "<a href=''>"+v+"</a><br/>";
+		});
+		$(".c1:eq(4)").html(c5Tag);
+		
+		$("#menu>li:eq(0)").hover(function(){
+			$("#popup>div:eq(0)").css("display","block")
+		},function(){
+			$("#popup>div:eq(0)").css("display","none")
+		});
+		$("#menu>li:eq(1)").hover(function(){
+			$("#popup>div:eq(1)").css({
+				left:'200px',
+				display:'block'
+			});
+		},function(){
+			$("#popup>div:eq(1)").css("display","none")
+		});
+		$("#menu>li:eq(2)").hover(function(){
+			$("#popup>div:eq(2)").css({
+				left:'400px',
+				display:'block'
+			});
+		},function(){
+			$("#popup>div:eq(2)").css("display","none")
+		});
+		$("#menu>li:eq(3)").hover(function(){
+			$("#popup>div:eq(3)").css({
+				left:'600px',
+				display:'block'
+			});
+		},function(){
+			$("#popup>div:eq(3)").css("display","none")
+		});
+		$("#menu>li:eq(4)").hover(function(){
+			$("#popup>div:eq(4)").css({
+				left:'800px',
+				display:'block'
+			});
+		},function(){
+			$("#popup>div:eq(4)").css("display","none")
+		});
+		
+	});	
+
+</script>
+</head>
+<body>
+<div id ="content">
+	<div id="title">GIRLSDAILY</div>
+	<div><ul id="menu"></ul></div>
+	<div id="popup">
+<!-- <img src = "../img/3.png"/> -->	
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

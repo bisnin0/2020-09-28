@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+	#reply{
+		width:400px;
+		height:100px;
+	}
+</style>
+<script>
+	$(function(){
+		$("#reply").keyup(function(){
+			//#reply 글자수
+			var cnt = $("#reply").val().length; ///value 구하는것. 내용값. length로 글자수를 구한다.
+			$("span").text(100-cnt);
+		});
+		
+	});
+</script> 
+</head>
+<body>
+<div>
+	남은 문자수 : <span>100</span>
+</div>
+<textarea id="reply" maxlength="100"></textarea> <!-- 속성중에 maxlength="100" 하면 100글자 이상 안들어간다.-->
+</body>
+</html>
